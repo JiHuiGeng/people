@@ -1,0 +1,8 @@
+mybatis环境搭建：
+                1.首先创建项目
+                2.导入jar包
+                3.创建resource目录
+                4.创建mybatis-config.xml,配置数据源，mybatis运行环境
+                5.创建实体类
+                6.创建映射mapper.xml
+                7.test测试
