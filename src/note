@@ -1,4 +1,4 @@
-mybatis环境搭建：
+mybatis：
                 1.首先创建项目
                 2.导入jar包
                 3.创建resource目录
@@ -6,7 +6,7 @@ mybatis环境搭建：
                 5.创建实体类
                 6.创建映射mapper.xml
                 7.test测试
-
+                8.在mapper.xml中，可以使用#{}来获取传入的参数,根据下标来获取
 log4j:
         是Apache提供的一种开源免费的日志处理类库
         是用于输出不容易被发现的一些问题，异常，信息等

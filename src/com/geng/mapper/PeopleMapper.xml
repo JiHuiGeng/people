@@ -3,7 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.geng.mapper.PeopleMapper">
+    <!--查询所有people数据-->
     <select id="selectPeople" resultType="com.geng.pojo.People">
         select * from people;
+    </select>
+    <!--根据传进来的参数Id，查询一行people数据-->
+    <select id="selectOne" resultType="com.geng.pojo.People" parameterType="int">
+        select *from people where id=#{0};
     </select>
 </mapper>
