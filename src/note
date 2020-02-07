@@ -6,3 +6,18 @@ mybatis环境搭建：
                 5.创建实体类
                 6.创建映射mapper.xml
                 7.test测试
+
+log4j:
+        是Apache提供的一种开源免费的日志处理类库
+        是用于输出不容易被发现的一些问题，异常，信息等
+        可以输出文件类型日志，可以使用属性配置文件的形式，指定输出地址，名称等
+        也可以在控制台输出日志
+        使用方式：
+                    首先导入jar包
+                    然后配置属性文件:log4j.properties
+
+         log4j的日志级别，从高到低：
+                                    FATAL ERROR WARN INFO DEBUG
+                    log4j控制输出级别：log4j.rootCategroy=INFO,CONSOLE
+                                                         设置INFO，那么就只能输出INFO以及之上的日志，不会输出DEBUG级别的日志
+                                                         设置CONSOLE，那么就是把日志往控制台输出，如果要输出文件类型，那么就可以加上LOGFILE
