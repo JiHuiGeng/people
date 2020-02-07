@@ -18,6 +18,6 @@ log4j:
 
          log4j的日志级别，从高到低：
                                     FATAL ERROR WARN INFO DEBUG
-                    log4j控制输出级别：log4j.rootCategroy=INFO,CONSOLE
+                    log4j控制输出级别：log4j.rootCategory=INFO,CONSOLE
                                                          设置INFO，那么就只能输出INFO以及之上的日志，不会输出DEBUG级别的日志
                                                          设置CONSOLE，那么就是把日志往控制台输出，如果要输出文件类型，那么就可以加上LOGFILE
