@@ -4,11 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.geng.mapper.PeopleMapper">
     <!--查询所有people数据-->
-    <select id="selectPeople" resultType="com.geng.pojo.People">
+    <select id="selectPeople" resultType="People">
         select * from people;
     </select>
     <!--根据传进来的参数Id，查询一行people数据-->
-    <select id="selectOne" resultType="com.geng.pojo.People" parameterType="int">
+    <select id="selectOne" resultType="People" parameterType="int">
         select *from people where id=#{0};
     </select>
+    <!--mysql数据库分页查询-->
+    <select id="page" resultType="People" parameterType="map">
+        select * from people limit #{pageStart},#{pageSize};
+    </select>
+    <!--mybatis的新增，修改，删除返回值都是Int,所以标签是不提供返回参数类型的-->
+    <insert id="insertPeopleInformation" parameterType="People">
+        insert  into people values(default ,#{name},#{age});
+    </insert>
 </mapper>

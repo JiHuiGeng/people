@@ -6,6 +6,12 @@
     <settings>
         <setting name="logImpl" value="LOG4J"/>
     </settings>
+    <!--别名，给指定的包路径+类名起一个别名，简化开发-->
+    <typeAliases>
+        <!--        <typeAlias type="com.geng.pojo.People" alias="peopleType"/>-->
+        <!--更牛，将需要经常用到的实体类的包路径加进去，那么包下的所有的实体类就是别名,记住要写类名-->
+        <package name="com.geng.pojo"/>
+    </typeAliases>
     <environments default="default">
         <environment id="default">
             <transactionManager type="JDBC"></transactionManager>

@@ -1,12 +1,38 @@
 mybatis：
                 1.首先创建项目
                 2.导入jar包
-                3.创建resource目录
-                4.创建mybatis-config.xml,配置数据源，mybatis运行环境
-                5.创建实体类
-                6.创建映射mapper.xml
-                7.test测试
-                8.在mapper.xml中，可以使用#{}来获取传入的参数,根据下标来获取 ：select * from people where id=#{0}
+                3.创建mybatis-config.xml,配置数据源，mybatis运行环境
+
+                    <configuration>
+                                <environments>
+                                    <environment>
+                                           <transactionManager type="JDBC"/>
+                                           <dataSource>
+                                                <property name="driver" value="com.mysql.jdbc.Driver">
+                                                <property name="url" value="jdbc:mysql://localhost:3306/ssm">
+                                                <property name="username" value="username">
+                                                <property name="password" value="password">
+                                           </dataSource>
+                                    </environment>
+                                </environments>
+                    </configuration>
+
+                4.创建实体类
+                5.创建映射mapper.xml
+                6.test测试
+                7.在mapper.xml中，可以使用#{}来获取传入的参数,根据下标来获取 ：
+                        select * from people where id=#{0}
+                        也可以使用#{param1}——第一个参数,这样来获取参数
+                        也可以使用${},但是，${}中要注意写数字，那么mybaits就认为这是一个值，拿去用了,就有问题了
+                                    而且${}找的是实体类的get/set方法
+                                    所以，我们可以在parameterType中指定实体类：com.geng.pojo.People;
+                                    然后，实例化People，给People赋值，
+                                    然后，${id}，mybatis会自己找get/set方法，获取id值，交给SQL语句
+                                    在执行SQL语句过程中，打印log，看出，id的值是可见的
+                                    如果换成#{id}，那么id的值就会变成?占位符，不可见
+                                    如果参数是map的，那么就是#{map的key}
+                                    如果参数是对象，那么就是#{属性名}
+                 8.?不允许在关键字前后进行数学运算，所以，只能在程序中做，然后传值给SQL
 log4j:
         是Apache提供的一种开源免费的日志处理类库
         是用于输出不容易被发现的一些问题，异常，信息等
